@@ -1,0 +1,434 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
+    color: rgb(218 216 216);
+    text-shadow: 1px 1px #000000;
+}
+
+a:hover {
+    color: rgba(255, 4, 4, 0.455);
+    text-shadow: 1px 1px #3d0000;
+}
+
+ul {
+    display: flex;
+}
+
+.button {
+    background-color: #B5BDC6;
+    border: none;
+    height: 33px;
+    width: 80px;
+    border-radius: 7%;
+
+    box-shadow: 1.5px 2.5px #1d1d5e;
+}
+
+.button:hover {
+    background-color: rgba(52, 19, 146, 0.9);
+    color: white;
+    box-shadow: none;
+}
+
+body {
+    background-image: url(./img/fondo.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+footer {
+    bottom: 8;
+    position: absolute;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    color: rgb(131 8 26 / 90%);
+    text-shadow: 2px 2px 5px rgb(27 26 26 / 55%);
+    font-size: larger;
+}
+
+#footerName {
+    color: rgb(120 118 126 / 80%);
+}
+
+#footerName:hover {
+    color: rgba(51, 5, 176, 0.9);
+    text-shadow: 1px 1px #000000bc;
+}
+
+/*HEADER*/
+#header {
+    background-color: rgb(17 0 65 / 90%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#logo img {
+    height: 5.5em;
+}
+
+#logo {
+    margin-left: 2em;
+    margin-top: 0.3em;
+}
+
+#menuDesp {
+    position: absolute;
+    top: 5.8em;
+    left: 87em;
+}
+
+#menuDesp summary {
+    text-align: right;
+}
+
+#menuDesp details[open] {
+    position: relative;
+    left: -23em;
+    top: 4.3em;
+    border-radius: 0% 0% 6% 6%;
+    padding: 8px;
+    width: 26em;
+    padding-top: 0px;
+    box-shadow: 2.5px 4px #80808057;
+    background-color: rgb(143 144 191);
+    z-index: 1;
+}
+/**No se como retrasar el efecto del click en la imagen que despliega el details, la animacion funciona, le di delay de mas para ver si surtia efecto, y nada**/
+details img :active {
+    animation-name: desaparece;
+    animation-duration: 10s;
+    animation-delay: 10s;
+    animation-iteration-count: 1;
+}
+
+@keyframes desaparece {
+
+    0% {
+        margin-top:0em;
+        opacity: 1;
+    }
+
+    100% {
+        margin-top:2em;
+        opacity: 0;
+    }
+}
+
+#menuDesp details[open] img {
+    display: none;
+}
+
+#menuDesp details[open] form {
+    display: grid;
+    grid-row-gap: 1em;
+}
+
+#menuDesp img {
+    height: 65px;
+    width: 66px;
+    padding-top: 3px;
+}
+
+details[open]>summary:first-of-type {
+    list-style-type: "\27F0";
+    font-size: 25px;
+    position: relative;
+    left: -0.5em;
+}
+
+details>summary:first-of-type {
+    list-style-type: none;
+}
+
+#emailAddress {
+    width: 30.5em;
+}
+
+#message {
+    background-color: transparent;
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #bf050576;
+    box-shadow: none;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    padding: 5px;
+    height: 3.5em;
+    border-radius: 0px;
+    width: 30.3em;
+}
+
+#message:focus {
+    border: 2px solid #bf050576;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+}
+
+.emailCheck {
+    color: rgba(41, 41, 41, 0.818);
+}
+
+#menuDespButton {
+    display: flex;
+    justify-content: center;
+}
+
+#contactButton {
+    height: 23px;
+    font-size: 12px;
+    font-weight: 500;
+    width: 109px;
+    border-radius: 9%
+}
+
+/*Barra de navegacion*/
+.li-wrapper {
+    margin: 2.3em;
+    width: fit-content;
+    display: flex;
+    height: 2em;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.li-wrapper:hover {
+    border-bottom: 1px solid rgba(255, 4, 4, 0.455);
+}
+
+#links {
+    display: flex;
+    background: linear-gradient(to top, #b7bcbf, rgb(17 0 65 / 90%));
+    border-bottom: #808080a3 inset 0.4px;
+    height: 4em;
+    align-items: center;
+}
+
+#links ul {
+    animation-name: apareceDerecha;
+    animation-duration: 1.7s;
+    /* animation-delay: 3s; */
+    animation-iteration-count: 1;
+}
+
+@keyframes apareceDerecha {
+
+    /* al definir los keyframes de la animación también la otorgamos un nombre*/
+    0% {
+        margin-left: -47em;
+    }
+
+    100% {
+        margin-left: 0em;
+    }
+}
+
+#links li {
+    list-style: none;
+}
+
+#links h3 {
+    display: none;
+}
+
+/*Boton de subir*/
+#botonUp {
+    display: none;
+}
+
+#subtitle {
+    margin-top: 8px;
+    margin-left: 24em;
+    display: flex;
+    align-items: center;
+    height: 3em;
+    backdrop-filter: blur(1px);
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #b4b3b9;
+    background: #625B7F;
+    color: #e4e4e4;
+    text-shadow: 1.1px 1.1px #000000c7;
+}
+
+#header-top {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#user-icon {
+    position: relative;
+    left: 32em;
+}
+
+/*Contenido principal*/
+
+
+
+#princContent {
+    display: grid;
+    place-items: center;
+    margin: 34px;
+    margin-bottom: 38px;
+    animation-name: aparece;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+@keyframes aparece {
+
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#formulario {
+    background-color: rgb(17 0 65 / 35%);
+    margin: 15px;
+    margin-top: 31px;
+    backdrop-filter: blur(2px);
+    padding: 5px;
+    display: inline-block;
+    height: 25em;
+    width: 14em;
+    border-radius: 6%;
+    box-shadow: 1px 2px rgb(20 4 65 / 49%);
+
+
+}
+
+#formContent {
+    display: grid;
+    padding: 10px;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-row-gap: 26px;
+    font-size: 17px;
+    margin-top: 1em;
+}
+
+.input {
+    background-color: transparent;
+    outline: none;
+    border-top: none;
+    padding: 3px;
+    border-left: none;
+    border-right: none;
+    border-bottom-style: solid;
+    border-bottom-color: #bf050576;
+
+}
+
+.input:focus {
+    border: 2px solid #bf050576;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px
+}
+
+.input:hover {
+    border-bottom-color: rgba(34, 4, 118, 0.9);
+    ;
+}
+
+/*Formato para los placeholders en opera, chrome...*/
+::placeholder {
+    font-family: 'Roboto', sans-serif;
+    color: rgba(41, 41, 41, 0.818);
+    font-size: 17px;
+
+}
+
+/*Formato para los placeholders Microsoft Edge*/
+::-ms-input-placeholder {
+    font-family: 'Roboto', sans-serif;
+    color: rgba(41, 41, 41, 0.818);
+    font-size: 17px;
+}
+
+
+#formContent-name {}
+
+#formContent-description {}
+
+#formContent-id {}
+
+#formContent-check {
+    color: #2c2c30;
+    padding-top: 8px;
+    padding-right: 2.6em;
+    font-size: 17px;
+    border-top: 2px solid #bf050576;
+}
+
+#formContent-check>label:hover {
+    color: #bf0505fb;
+}
+
+#formContent-priority {
+    text-align: left;
+    margin-top: -5px;
+    margin-bottom: -11px;
+}
+
+#formContent-priority input[type="radio"] {
+    margin: 7px;
+}
+
+#formContent-priority>label {
+    color: #2c2c30;
+    padding-right: 96px;
+
+    font-size: 17px;
+}
+
+#formContent-priority>label:hover {
+    color: rgba(34, 4, 118, 0.9)
+}
+
+
+#formContent-priority input[type="radio"]:checked+label {
+    color: #bf0505fb;
+}
+
+
+#formContent-priority p {
+    margin: 7px;
+    padding-left: 3px;
+    margin-bottom: 12px;
+    color: #2c2c30;
+    border-bottom: 2px solid #bf050576;
+    padding-right: 96px;
+    font-size: 17px;
+}
+
+#formContent-buttons {
+    margin-top: -11px;
+}

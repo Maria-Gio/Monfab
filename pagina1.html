@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta http-equiv="refresh" content="350">-->
+    <link rel="icon" type="image/x-icon" href="css/img/icono.png" />
+    <meta name="keywords" content="sensor, sensores industriales, motor, maquinaria, industrial" />
+    <meta name="robots" content="follow" />
+    <meta name="author" content="María Isabel Álvarez Gio" />
+    <meta name="copyright" content="María Isabel Álvarez Gio" />
+    <meta name="description" content="Es una web de monitorizacion de stock de sensores industriales." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="stylesheet" href="css/normalize.css" />
+    <link href="css/style1.css" rel="stylesheet" type="text/css" />
+    <title>Home | Página 1</title>
+</head>
+
+<body>
+    <header>
+        <div id="header">
+            <section id="header-top">
+                <div id="logo">
+                    <a href="https://www.sensorstecnics.net/pages/es/inicio.php"><img src="css/img/logo_footer.png"></a>
+                </div>
+                <div id="subtitle">
+                    <h2>Apartado de creación de items</h2>
+                </div>
+                <div id="user-icon"><img src="./css/img/usericon.png"></div>
+            </section>
+
+            <div id="menuDesp">
+                <details>
+                    <summary><img src="./css/img/contacto2.png" /></summary>
+
+                    <form method="post">
+
+                        <div class="emailBox">
+                            <input class="input" id="emailAddress" type="email" size="64" maxlength="64" required
+                                placeholder="Ingresa tu correo electronico "
+                                pattern=".+@gmail\.com,.+@gmail\.es,.+@hotmail\.com,.+@hotmail\.es"
+                                title="Proporcione solo una dirección de correo electrónico corporativa de Best Startup Ever" />
+                        </div>
+                        <div class="messageBox">
+                            <textarea id="message" cols="60" rows="4" required
+                                placeholder="Indica aquí tu consulta y te contactaremos lo más rápido posible..."></textarea>
+                        </div>
+                        <div class="emailCheck">
+                            <p><input type="checkbox" id="check" checked><label for="check"> Enviar ofertas y
+                                    promociones a mi dirección de e-mail</label>
+                        </div>
+                        <div id="menuDespButton">
+                            <button class="button" id="contactButton">Enviar</button>
+                        </div>
+
+                    </form>
+
+                </details>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="links">
+            <h3>Directorio</h3>
+            <ul>
+                <div class="li-wrapper">
+                    <li>
+                        <a href="pagina1.html">Home</a>
+                    </li>
+                </div>
+                <div class="li-wrapper">
+                    <li>
+                        <a href="pagina2.html">Tabla</a>
+                    </li>
+                </div>
+                <div class="li-wrapper">
+                    <li>
+                        <a href="pagina3.html">Galería</a>
+                    </li>
+                </div>
+                <div class="li-wrapper">
+                    <li>
+                        <a href="pagina4.html">Sobre nosotros</a>
+                    </li>
+                </div>
+                <div class="li-wrapper">
+                    <li>
+                        <a href="pagina5.html">Localización</a>
+                    </li>
+                </div>
+            </ul>
+        </div>
+        <div id="princContent">
+            <div id="formulario">
+                <form action="./ws/createElement2.php" method="POST">
+                    <div id="formContent">
+
+                        <div id="formContent-name">
+                            <input type="text" class="input" placeholder="Nombre" id="p_name" name="name" required
+                                autofocus>
+                        </div>
+
+                        <div id="formContent-description">
+                            <input type="text" class="input" placeholder="Descripción" id="p_descript" name="descript"
+                                required>
+                        </div>
+
+                        <div id="formContent-id">
+                            <input type="text" class="input" placeholder="Nº ID" name="id_num" id="p_id_num" required>
+                        </div>
+                        <div id="formContent-priority">
+                            <p>Prioridad</p>
+                            <input type="radio" id="priority1" value="High" name="priority" required />
+                            <label for="priority1">Alta</label>
+                            <br>
+                            <input type="radio" id="priority2" name="priority" value="Medium" />
+                            <label for="priority2">Media</label>
+                            <br>
+                            <input type="radio" id="priority3" name="priority" value="Low" />
+                            <label for="priority3">Baja</label>
+                        </div>
+                        <div id="formContent-check">
+                            <input type="checkbox" id="p_status" name="status">
+                            <label for="p_status">Modelo activo</label>
+                        </div>
+                        <div id="formContent-buttons">
+                            <button class="button" id="buildFormButton">Enviar</button>
+                            <button class="button" id="resetButton">Reset</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="botonUp">
+            <a href="#logo"><img src="css/img/flecha.png"></a>
+        </div>
+    </main>
+    <footer>
+        <p>Realizado por <a id="footerName" href="https://es.wikipedia.org/wiki/Isabel_II_del_Reino_Unido">María Isabel
+                Álvarez Gio</a>
+        </p>
+    </footer>
+</body>
+
+</html>

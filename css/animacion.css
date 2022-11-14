@@ -1,0 +1,53 @@
+details img:active{
+  animation-name: desaparece;
+  animation-duration: 1s;
+  /* animation-delay: 3s; */
+  animation-iteration-count: 1;
+}
+
+@keyframes desaparece { /* al definir los keyframes de la animación también la otorgamos un nombre*/
+  0% {
+    margin-top:0em;
+    opacity: 1;
+  }
+  100%{
+    margin-top:1em;
+    opacity: 0;
+    display: none;
+  }
+}
+/*  La transición entre los % se divide en entre el número de segundos de la animación
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+  */
+
+/* Hacemos que la animación se mueva por la pantalla del punto A al punto B
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+  */
+
+/* Delay nos permite esperar X segundos para comenzar la animacion, tambien se pueden usar valores negativos
+    animation-delay: 2s;
+  */
+
+/* Cuantas veces se va a realizar esta animación, se permite el value "infinite"
+    animation-iteration-count: 3;
+  */
+
+/* Dirección en la que se mueve la animación {normal, reverse, alternate, alternate-reverse}
+     animation-direction: reverse;
+  */
+
+/* Determina la velocidad de la curva de animación
+        ease -Empieza lento, luego rapido y luego acaba lento
+        linear - misma velocidad
+        ease-in - empieza lento
+        ease-out - acaba lento
+        ease-in-out - empieza y acaba lento
+        cubic-bezier(n,n,n,n) - curva cuadrática 3 puntos, curva cúbica 4 puntos
+  */

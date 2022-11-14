@@ -1,0 +1,16 @@
+{
+    "name": "alvar/autocarga",
+    "autoload": {
+        "psr-4": {
+            "ElementoPHP\\":  ["ws/models/","GestionBD.php" ] ,
+            "iToJsonPHP\\": "ws/interfaces/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Maria Gio",
+            "email": "alvarezgiomariaisabel@gmail.com"
+        }
+    ],
+    "require": {}
+}

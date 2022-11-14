@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="350">
+    <link rel="icon" type="image/x-icon" href="css/img/icono.png" />
+    <meta name="keywords" content="sensor, sensores industriales, motor, maquinaria, industrial" />
+    <meta name="robots" content="follow" />
+    <meta name="author" content="María Isabel Álvarez Gio" />
+    <meta name="copyright" content="María Isabel Álvarez Gio" />
+    <meta name="description" content="Es una web de monitorizacion de stock de sensores industriales." />
+    <link href="css/style2.css" rel="stylesheet" type="text/css" />
+    <script defer src="./js/functions.js"></script>
+    <title>Tabla | Página 2</title>
+</head>
+
+<body>
+    <header>
+        <div id="header">
+            <section id="header-top">
+                <div id="logo">
+                    <a href="https://www.sensorstecnics.net/pages/es/inicio.php"><img src="css/img/logo_footer.png"></a>
+                </div>
+                <div id="subtitle">
+                    <h2>Tabla de datos</h2>
+                </div>
+                <div id="user-icon"><img src="./css/img/usericon.png"></div>
+            </section>
+
+            <div id="menuDesp">
+                <details>
+                    <summary><img src="./css/img/contacto2.png" /></summary>
+
+                    <form method="post">
+
+                        <div class="emailBox">
+                            <input class="input" id="emailAddress" type="email" size="64" maxlength="64" required
+                                placeholder="Ingresa tu correo electronico "
+                                pattern=".+@gmail\.com,.+@gmail\.es,.+@hotmail\.com,.+@hotmail\.es"
+                                title="Proporcione solo una dirección de correo electrónico corporativa de Best Startup Ever" />
+                        </div>
+                        <div class="messageBox">
+                            <textarea id="message" cols="60" rows="4" required
+                                placeholder="Indica aquí tu consulta y te contactaremos lo más rápido posible..."></textarea>
+                        </div>
+                        <div class="emailCheck">
+                            <p><input type="checkbox" id="check" checked><label for="check"> Enviar ofertas y
+                                    promociones a mi dirección de e-mail</label>
+                        </div>
+                        <div id="menuDespButton">
+                            <button class="button" id="contactButton">Enviar</button>
+                        </div>
+
+                    </form>
+
+                </details>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="links">
+            <h3>Directorio</h3>
+            <ul>
+                <li>
+                    <a href="pagina1.html">Home</a>
+                </li>
+                <li>
+                    <a href="pagina2.html">Tabla</a>
+                </li>
+                <li>
+                    <a href="pagina3.html">Galería</a>
+                </li>
+                <li>
+                    <a href="pagina4.html">Sobre nosotros</a>
+                </li>
+                <li>
+                    <a href="pagina5.html">Localización</a>
+                </li>
+
+            </ul>
+        </div>
+
+        <div id="princContent">
+            <div id="bloqueTabla">
+                <div id="divFinderInput">
+                    <div id="barraBusca">
+                        <form id="searchForm">
+                            <input type="text" id="searchInput" name="search" oninput="checkInput();"
+                                placeholder="Busca aqui...">
+                            <img id="searchButton" src="./css/img/buscar.png">
+                        </form>
+                    </div>
+                </div>
+                <section id="cuerpoTabla">
+                    <div id="tabla">
+                        <table>
+                            <tr>
+                                <th>Acciones</th>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Número de serie</th>
+                                <th>Estado</th>
+                                <th>Prioridad</th>
+                            </tr>
+
+                            <tbody id="tableBody">
+                            </tbody>
+
+                        </table>
+                    </div>
+                </section>
+                <button id="restoreButton" class="button" onclick="createTable()">Restore Table</button>
+
+
+            </div>
+        </div>
+        </div>
+        <div id="botonUp"><a href="#logo"><img src="css/img/flecha.png"></a></div>
+    </main>
+    <footer>
+        <p>Realizado por <a id="footerName" href="https://es.wikipedia.org/wiki/Isabel_II_del_Reino_Unido">María Isabel
+                Álvarez Gio</a>
+        </p>
+    </footer>
+</body>
+
+</html>
