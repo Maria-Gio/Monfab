@@ -13,7 +13,8 @@
     <meta name="copyright" content="María Isabel Álvarez Gio" />
     <meta name="description" content="Es una web de monitorizacion de stock de sensores industriales." />
     <link href="css/style2.css" rel="stylesheet" type="text/css" />
-    <script defer src="./js/functions.js"></script>
+    <script defer src="./js/functionsWeno.js"></script>
+
     <title>Tabla | Página 2</title>
 </head>
 
@@ -62,25 +63,7 @@
     </header>
     <main>
         <div id="links">
-            <h3>Directorio</h3>
-            <ul>
-                <li>
-                    <a href="pagina1.html">Home</a>
-                </li>
-                <li>
-                    <a href="pagina2.html">Tabla</a>
-                </li>
-                <li>
-                    <a href="pagina3.html">Galería</a>
-                </li>
-                <li>
-                    <a href="pagina4.html">Sobre nosotros</a>
-                </li>
-                <li>
-                    <a href="pagina5.html">Localización</a>
-                </li>
-
-            </ul>
+            <script src="./js/nav.js"></script>
         </div>
 
         <div id="princContent">
@@ -112,7 +95,12 @@
                         </table>
                     </div>
                 </section>
-                <button id="restoreButton" class="button" onclick="createTable()">Restore Table</button>
+                <div id="botonesTabla">
+                    <button id="restoreButton" class="button" onclick="createTable()">Restaurar
+                        Tabla</button>
+                    <button id="saveButton" class="button" onclick="saveChanges()">Guardar cambios</button>
+                </div>
+
 
 
             </div>

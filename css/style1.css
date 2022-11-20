@@ -110,6 +110,7 @@ footer {
     background-color: rgb(143 144 191);
     z-index: 1;
 }
+
 /**No se como retrasar el efecto del click en la imagen que despliega el details, la animacion funciona, le di delay de mas para ver si surtia efecto, y nada**/
 details img :active {
     animation-name: desaparece;
@@ -121,12 +122,12 @@ details img :active {
 @keyframes desaparece {
 
     0% {
-        margin-top:0em;
+        margin-top: 0em;
         opacity: 1;
     }
 
     100% {
-        margin-top:2em;
+        margin-top: 2em;
         opacity: 0;
     }
 }
@@ -212,6 +213,22 @@ details>summary:first-of-type {
     justify-content: center;
     align-content: center;
 
+}
+
+.li-wrapper-selected {
+    margin: 2.3em;
+    width: fit-content;
+    display: flex;
+    height: 2em;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* color: red; */
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    border-radius: 26px;
+    border: 1.3px solid #8ea0b2;
+    background-color: rgb(49 102 143 / 42%);
 }
 
 .li-wrapper:hover {

@@ -204,6 +204,38 @@ details>summary:first-of-type {
     border-radius: 9%
 }
 
+.li-wrapper {
+    margin: 2.3em;
+    width: fit-content;
+    display: flex;
+    height: 2em;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.li-wrapper-selected {
+    margin: 2.3em;
+    width: fit-content;
+    display: flex;
+    height: 2em;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    border-radius: 26px;
+    border: 1.3px solid #8ea0b2;
+    background-color: rgb(49 102 143 / 42%);
+}
+
+.li-wrapper:hover {
+    border-bottom: 1px solid rgba(255, 4, 4, 0.455);
+}
+
 /*Barra de navegacion*/
 #links {
     display: flex;
@@ -214,10 +246,20 @@ details>summary:first-of-type {
 }
 
 #links ul {
+    display: flex;
     animation-name: apareceDerecha;
     animation-duration: 1.7s;
     /* animation-delay: 3s; */
     animation-iteration-count: 1;
+}
+
+#links li {
+    list-style: none;
+
+}
+
+.li-wrapper:hover {
+    border-bottom: 1px solid rgba(255, 4, 4, 0.455);
 }
 
 @keyframes apareceDerecha {
@@ -232,17 +274,7 @@ details>summary:first-of-type {
     }
 }
 
-#links li {
-    list-style: none;
-    display: inline;
-    margin-left: 75px;
-    margin-right: 22px;
-    padding: 14px;
-}
 
-#links li:hover {
-    border-bottom: 1px solid rgba(255, 4, 4, 0.455);
-}
 
 #links h3 {
     display: none;
@@ -356,7 +388,8 @@ details>summary:first-of-type {
 
 #divFinderInput {
     margin-bottom: 8px;
-    padding-left: 7em;
+    display: flex;
+    justify-content: center;
 }
 
 #searchInput {
@@ -379,6 +412,8 @@ th {
 
 td {
     padding: 5px;
+    width: 8em;
+    text-align: center;
     border-bottom: 2px solid #41434391;
 }
 
@@ -406,11 +441,38 @@ table button:hover {
     box-shadow: inset 1.5px 2.5px #080808b5;
 }
 
+label {
+    font-size: 15px;
+    color: rgba(41, 41, 41, 0.818);
+    margin: 2px;
+}
 
+.buttonTd {
+    width: fit-content;
+}
+
+.tdButtons {
+    margin: 2px;
+}
 
 #searchButton {
     margin-bottom: -3px;
     height: 1em;
+}
+
+#prioridad {
+    font-family: 'Roboto', sans-serif;
+    appearance: none;
+    display: flex;
+    outline: none;
+    cursor: pointer;
+    margin-left: 47px;
+    border: none;
+    font-size: 16px;
+    color: rgb(71, 71, 71);
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
 }
 
 #barraBusca {
@@ -422,10 +484,35 @@ table button:hover {
     border-radius: 100px;
 }
 
+#botonesTabla {
+    display: flex;
+    align-items: center;
+}
+
 #restoreButton {
     width: 100px;
     background-color: #b9b9f6b5;
     margin-top: 8px;
+}
+
+#saveButton {
+    width: 100px;
+    background-color: #b9b9f6b5;
+    margin-top: 8px;
+    margin-left: 7px;
+}
+
+.inputModify {
+    height: 1.3em;
+    width: 100%;
+    text-align: center;
+    background: none;
+    border: none;
+}
+
+.inputModify:focus {
+    outline: none;
+    overflow: hidden;
 }
 
 #cuerpoTabla {

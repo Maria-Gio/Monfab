@@ -251,7 +251,7 @@ class Element // implements IToJson
     public static function createElement()
     {
         $paramarray = [];
-        $nombre = trim($_POST["name"]) ?? null;
+        $nombre = trim($_POST["nombre"]) ?? null;
         $descripcion = trim($_POST["descripcion"]) ?? null;
         $nserie = trim($_POST['nserie']) ?? null;
         $estado = trim($_POST['estado']) ?? null;
@@ -376,7 +376,7 @@ class Element // implements IToJson
 
     public function setDatosNuevos()
     {
-        $nombre = trim($_POST["name"]) ?? null;
+        $nombre = trim($_POST["nombre"]) ?? null;
         $descripcion = trim($_POST["descripcion"]) ?? null;
         $nserie = trim($_POST['nserie']) ?? null;
         $estado = trim($_POST['estado']) ?? null;
