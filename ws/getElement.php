@@ -13,3 +13,4 @@ if ($respuesta) {
 } else {
     echo Element::message(false, "Objeto no encontrado", null);
 }
+return $respuesta;

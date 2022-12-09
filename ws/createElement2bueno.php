@@ -1,13 +1,12 @@
 <?php
 require_once "models/Element.php";
-$elemento=null;
+$elemento = null;
 try {
     $elemento = Element::createElement();
     $respuesta = $elemento->guardar($elemento, null, null, null);
 } catch (Exception $e) {
-    echo $e->getMessage();
+    $e->getMessage();
 }
-
 
 
 if (isset($respuesta)) {

@@ -13,7 +13,9 @@
     <meta name="copyright" content="María Isabel Álvarez Gio" />
     <meta name="description" content="Es una web de monitorizacion de stock de sensores industriales." />
     <link href="css/style2.css" rel="stylesheet" type="text/css" />
-    <script defer src="./js/functionsWeno.js"></script>
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script defer src="./js/P2functions.js"></script>
 
     <title>Tabla | Página 2</title>
 </head>
@@ -80,7 +82,7 @@
                 <section id="cuerpoTabla">
                     <div id="tabla">
                         <table>
-                            <tr>
+                            <tr id="headerTabla">
                                 <th>Acciones</th>
                                 <th>Nombre</th>
                                 <th>Descripción</th>
@@ -88,9 +90,12 @@
                                 <th>Estado</th>
                                 <th>Prioridad</th>
                             </tr>
+                            <div id='divTabla'>
+                                <tbody id="tableBody">
+                                </tbody>
+                            </div>
 
-                            <tbody id="tableBody">
-                            </tbody>
+
 
                         </table>
                     </div>
@@ -98,7 +103,8 @@
                 <div id="botonesTabla">
                     <button id="restoreButton" class="button" onclick="createTable()">Restaurar
                         Tabla</button>
-                    <button id="saveButton" class="button" onclick="saveChanges()">Guardar cambios</button>
+                    <button id="saveButton" class="button" onclick="saveChanges2()">Guardar
+                        cambios</button>
                 </div>
 
 

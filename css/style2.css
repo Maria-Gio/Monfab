@@ -484,6 +484,16 @@ label {
     border-radius: 100px;
 }
 
+#tabla {
+    overflow: hidden scroll;
+    max-height: 15rem;
+}
+
+#headerTabla {
+    position: sticky;
+    top: -3px;
+}
+
 #botonesTabla {
     display: flex;
     align-items: center;

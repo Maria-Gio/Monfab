@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<meta http-equiv="refresh" content="350">-->
+    <meta http-equiv="refresh" content="350">
     <link rel="icon" type="image/x-icon" href="css/img/icono.png" />
     <meta name="keywords" content="sensor, sensores industriales, motor, maquinaria, industrial" />
     <meta name="robots" content="follow" />
@@ -17,7 +17,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="stylesheet" href="css/normalize.css" />
     <link href="css/style1.css" rel="stylesheet" type="text/css" />
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     <script defer src="./js/nav.js"></script>
+    <script defer src="./js/P1functions.js"></script>
     <title>Home | Página 1</title>
 </head>
 
@@ -38,7 +41,7 @@
                 <details>
                     <summary><img src="./css/img/contacto2.png" /></summary>
 
-                    <form method="post">
+                    <form method="post" >
 
                         <div class="emailBox">
                             <input class="input" id="emailAddress" type="email" size="64" maxlength="64" required
@@ -55,7 +58,7 @@
                                     promociones a mi dirección de e-mail</label>
                         </div>
                         <div id="menuDespButton">
-                            <button class="button" id="contactButton">Enviar</button>
+                            <button class="button" id="contactButton" >Enviar</button>
                         </div>
 
                     </form>
@@ -66,11 +69,11 @@
     </header>
     <main>
         <div id="links">
-            
+
         </div>
         <div id="princContent">
             <div id="formulario">
-                <form action="./ws/createElement2bueno.php" method="POST">
+                <form id="form" method="POST" >
                     <div id="formContent">
 
                         <div id="formContent-name">
@@ -79,8 +82,8 @@
                         </div>
 
                         <div id="formContent-description">
-                            <input type="text" class="input" placeholder="Descripción" id="p_descript" name="descripcion"
-                                required>
+                            <input type="text" class="input" placeholder="Descripción" id="p_descript"
+                                name="descripcion" required>
                         </div>
 
                         <div id="formContent-id">
@@ -102,7 +105,7 @@
                             <label for="p_status">Modelo activo</label>
                         </div>
                         <div id="formContent-buttons">
-                            <button class="button" id="buildFormButton">Enviar</button>
+                            <button class="button" type="button" onclick="sendFormData()" id="buildFormButton">Enviar</button>
                             <button class="button" id="resetButton">Reset</button>
                         </div>
 

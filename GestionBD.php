@@ -48,7 +48,8 @@ class GestionBD extends ConexionW
                     return null;
                 }
             }
-
+            //el if de la muerte
+            //empty() para validar que no esté vacio
             if (!isset($resultados) && $resultados == '' && $resultados == array()) {
                 $resultados = null;
 

@@ -1,4 +1,5 @@
 <?php
+use function PHPUnit\Framework\isEmpty;
 
 //use iToJsonPHP\IToJson;
 require_once "../GestionBD.php";
@@ -6,7 +7,7 @@ require_once "../GestionBD.php";
 class Element // implements IToJson
 
 {
-    private $name;
+    private $nombre;
     private $descripcion;
     private $nserie;
     private $estado;
@@ -17,9 +18,9 @@ class Element // implements IToJson
 
 
 
-    public function __construct($name, $descripcion, $nserie, $estado, $prioridad)
+    public function __construct($nombre, $descripcion, $nserie, $estado, $prioridad)
     {
-        $this->name = $name;
+        $this->nombre = $nombre;
         $this->descripcion = $descripcion;
         $this->nserie = $nserie;
         $this->estado = $estado;
@@ -33,7 +34,7 @@ class Element // implements IToJson
      */
     public function getName()
     {
-        return $this->name;
+        return $this->nombre;
     }
 
     /**
@@ -41,9 +42,9 @@ class Element // implements IToJson
      *
      * @return  self
      */
-    public function setName($name)
+    public function setName($nombre)
     {
-        $this->name = $name;
+        $this->nombre = $nombre;
 
         return $this;
     }
@@ -154,7 +155,7 @@ class Element // implements IToJson
         }
     }
     public static function conectDB()
-    {
+    { //metodo abierto a recibir los datos cuando se conecte la bd, para ahora, mas simple
         $user = 'root';
         $host = '127.0.0.1';
         $password = '';
@@ -254,8 +255,9 @@ class Element // implements IToJson
         $nombre = trim($_POST["nombre"]) ?? null;
         $descripcion = trim($_POST["descripcion"]) ?? null;
         $nserie = trim($_POST['nserie']) ?? null;
-        $estado = trim($_POST['estado']) ?? null;
-        $prioridad = trim($_POST["prioridad"]) ?? null;
+        $prioridad = $_POST["prioridad"] ?? null;
+        $estado = $_POST["estado"] ?? null;
+
         if (isset($nombre) && $nombre != "" && $nombre != null) {
             $usr_name = $nombre;
             array_push($paramarray, $usr_name);
@@ -277,11 +279,12 @@ class Element // implements IToJson
         } else {
             $usr_id_num = null;
         }
-        if (isset($estado) && $estado != "" && $estado != null) {
+        if (!empty($estado)) {
             $usr_status = trim($estado);
             array_push($paramarray, $usr_status);
         } else {
-            $usr_status = "off";
+            $estado = "off";
+            $usr_status = $estado;
             array_push($paramarray, $usr_status);
         }
         if (isset($prioridad) && $prioridad != "" && $prioridad != null) {
@@ -312,6 +315,13 @@ class Element // implements IToJson
         }
         ;
         try {
+
+            $elemento = null;
+
+
+
+
+
             return $elemento = new Element(...$paramarray);
         } catch (ArgumentCountError $x) {
             throw new Exception('Faltan propiedades para generar el elemento');
@@ -368,7 +378,7 @@ class Element // implements IToJson
         $msgTemp->success = $boolean;
         $msgTemp->message = $message;
         $msgTemp->data = $data;
-        return $mensaje = json_encode($msgTemp);
+        return json_encode($msgTemp);
 
 
     }
@@ -376,11 +386,21 @@ class Element // implements IToJson
 
     public function setDatosNuevos()
     {
-        $nombre = trim($_POST["nombre"]) ?? null;
-        $descripcion = trim($_POST["descripcion"]) ?? null;
-        $nserie = trim($_POST['nserie']) ?? null;
-        $estado = trim($_POST['estado']) ?? null;
-        $prioridad = trim($_POST["prioridad"]) ?? null;
+
+        if (isset($_POST['nombre'])) {
+            $nombre = trim($_POST['nombre']);
+        }
+        if (isset($_POST['descripcion'])) {
+            $descripcion = trim($_POST['descripcion']);
+        }
+        if (isset($_POST['nserie'])) {
+            $nserie = trim($_POST['nserie']);
+        }
+        $estado = $_POST['estado'] ?? null;
+        $prioridad = $_POST['prioridad'] ?? null;
+
+
+
         if (isset($nombre) && $nombre != "" && $nombre != null) {
             $this->setName($nombre);
             $bindParams[] = $nombre;
@@ -397,13 +417,13 @@ class Element // implements IToJson
             $bindParams[] = $nserie;
             $queryParams[] = "nserie";
         }
-        if (isset($estado) && $estado != "") {
+        if (isset($estado) && $estado != null) {
 
             $this->setNserie($estado);
             $bindParams[] = $estado;
             $queryParams[] = "estado";
         }
-        if (isset($prioridad) && $prioridad != "") {
+        if (isset($prioridad) && $prioridad != null) {
             switch ($prioridad) {
                 case 'Low':
                     $this->setPrioridad($prioridad);
@@ -426,6 +446,9 @@ class Element // implements IToJson
                     $queryParams[] = "prioridad";
             }
         }
+        // print_r($bindParams);
+
+        // print_r($queryParams);
         try {
             $datos[] = $bindParams;
             $datos[] = $queryParams;
